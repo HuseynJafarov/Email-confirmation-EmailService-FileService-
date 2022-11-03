@@ -1,0 +1,47 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AccessoriesLayout.cshtml";
+}
+
+<div class="container mb-4 my-5" id="register">
+    <div class="row d-flex justify-content-center">
+        <div class="input-area">
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <form asp-controller="Account" asp-action="Register" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="Fullname" class="form-label">Fullname</label>
+                    <input class="form-control" asp-for="Fullname">
+                    <span class="text-danger" asp-validation-for="Fullname"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input class="form-control" asp-for="Email">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Username" class="form-label">Username</label>
+                    <input class="form-control" asp-for="Username">
+                    <span class="text-danger" asp-validation-for="Username"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input class="form-control" asp-for="Password">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ConfrimPassword" class="form-label">ConfrimPassword</label>
+                    <input class="form-control" asp-for="ConfrimPassword">
+                    <span class="text-danger" asp-validation-for="ConfrimPassword"></span>
+                </div>
+                <button type="submit" style="width:100%" class="btn btn-primary">Sing Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}
